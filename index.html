@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luas dan Keliling Ruang Bangun Segitiga</title>
+  <style>
+    *{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .tengah{
+      display: flex;
+      justify-content: center;
+    }
+    .card{
+      width: 40%;
+      box-shadow: 0 4px 8px 0 rgb(0,0,0, 0.2);
+      transition: 0.3s;
+      border-radius: 10px;
+    }
+    #txBARU{
+      font-size: 25px;
+  
+    }
+    .cardbody{
+      padding: 2px 16px;
+    }
+    .cardfooter{
+      padding: 8px;
+      background-color: aliceblue;
+      display: flex; 
+      justify-content: right;
+    }
+    form {
+        background-color: beige;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin-bottom: 20px;
+        }
+    label{
+      font-weight: bold;
+      font-size: 14px;
+    }
+    input[type=text]{
+      width: 100%;
+      padding: 5px;
+      margin: 8px 0;
+    }
+    button{
+      border: none;
+      border-radius: 8px;
+      background-color: rgb(160, 250, 220);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      color: navy;
+      font-weight: bold;
+      padding: 8px 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="tengah">
+  <div class="card">
+  <h1 id="txBARU"> Ruang Bangun Segitiga </h1>
+  <div class="cardbody">
+   <form>
+    <label> Nilai Alas  </label>
+      <input type="text" name="txALAS" id="txALAS">
+    <label> Nilai Tinggi  </label>
+     <input type="text" name="txTINGGI" id="txTINGGI">
+    <label> Nilai Sisi 1  </label>
+     <input type="text" name="txSISI1" id="txSISI1">
+    <label> Nilai Sisi 2  </label>
+     <input type="text" name="txSISI2" id="txSISI2">
+    <label> Nilai Sisi 3  </label>
+     <input type="text" name="txSISI3" id="txSISI3">
+   </form>
+   <div id="txHASIL"> Nilai luas dan Keliling</div>
+  </div>
+  <div class="cardfooter">
+  <button onclick="pesan()">Hitung Luas dan Keliling </button>
+  </div>
+  </div>
+</div>
+  
+<script>
+  function pesan(){
+  //alert("Belajar JavaScript")
+  let ALAS = document.getElementById("txALAS").value
+  let TING = document.getElementById("txTINGGI").value
+  let S1 = document.getElementById("txSISI1").value
+  let S2 = document.getElementById("txSISI2").value
+  let S3 = document.getElementById("txSISI3").value
+ 
+  //Proses Hitung Luas
+  let LUAS =0.5*ALAS*TING
+  let KEL = Number(S1) + Number(S2) + Number(S3)
+  
+  let hsl = "Hitung luas segitiga <br> Luas = 1/2 x Alas x Tinggi<br>";
+        hsl += "Luas = 1/2 x " + ALAS + "cm x " + TING + "cm<br>";
+        hsl += "Luas = " + LUAS + "cm<sup>2</sup><br><br>";
+        hsl += "Hitung Keliling Segitiga<br>";
+        hsl += "Keliling = Sisi1 + Sisi2 + Sisi3<br>";
+        hsl += "Keliling = " + S1 + "cm + " + S2 + "cm + " + S3 + "cm<br>";
+        hsl += "Keliling = " + KEL + " cm";
+        document.getElementById("txHASIL").innerHTML = hsl;
+  }
+</script>
+</body>
+</html>
+
+
